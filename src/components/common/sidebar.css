@@ -1,0 +1,69 @@
+.sidebar {
+    width: 250px;
+    height: 100%;
+    color: #fff;
+    color: #666666;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #ccc; /* Add a right border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow to the right border */
+  }
+  
+  .logo img {
+    width: 60%;
+    padding: 30px 20px 20px 20px;
+  }
+  
+  .navigation {
+    list-style: none;
+    padding: 0px 28px;
+  }
+  
+  .navigation li {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    cursor: pointer;
+  }
+  
+  .navigation li span {
+    margin-left: 10px;
+  }
+  
+  .navigation .icon {
+    width: 25px;
+  }
+
+  .logout .icon {
+    width: 40px;
+
+  }
+  
+  .logout {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 28px;
+  }
+  
+  .logout li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .logout li span {
+    margin-left: 10px;
+  }
+  
+  .logout li:hover span, .navigation li:hover span {
+    color: #2B82FB;
+  }
+
+  

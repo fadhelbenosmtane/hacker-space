@@ -1,0 +1,9 @@
+.side-decoration {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh; /* Adjust height as needed */
+    width: auto; /* Adjust width as needed */
+    z-index: -1; /* Ensure the side decoration is behind other content */
+  }
+  

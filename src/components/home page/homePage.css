@@ -1,0 +1,128 @@
+.main-content {
+    flex: 1;
+    /* Allow it to take up the remaining space */
+    padding: 0 20px;
+    /* Adjust padding as needed */
+    margin-left: 250px;
+    /* Same width as the sidebar */
+    margin-right: 70px;
+    /* Add margin for spacing */
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-title {
+    font-size: 44px;
+}
+
+.welcome-title span {
+    color: #FFBA00;
+}
+
+.search-bar {
+    width: 350px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+.search-icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* homePage.css */
+.navigation-bar {
+    margin-top: 58px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    font-size: 23px;
+    margin-bottom: 30px;
+}
+
+.navigation-bar span {
+    color: #666666;
+    cursor: pointer;
+}
+
+.navigation-bar span:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+.event-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.event-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.event-state {
+    background-color: #63c363;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.event-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
+.event-date {
+    margin-top: 5px;
+}
+
+.event-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.details-link a {
+    color: black;
+    text-decoration: underline;
+}
+
+.event-top , .event-bottom {
+    padding:0 30px;
+}
+
+.navigation-bar span.selected {
+    color: #000;
+    text-decoration: underline;
+  }
+  
