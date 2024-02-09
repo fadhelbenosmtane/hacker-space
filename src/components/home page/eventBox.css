@@ -1,0 +1,78 @@
+.event-box {
+    display: grid;
+    grid-template-rows: auto auto;
+    /* Two rows */
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.event-info {
+    grid-row: 1;
+    /* First row */
+    grid-column: 1;
+    /* First column */
+    display: flex;
+    /* Display as flex to align items in the same line */
+    align-items: center;
+    /* Align items vertically */
+    gap: 20px;
+    /* Add gap between items */
+    width: 700px;
+}
+
+.event-name {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.event-state {
+    grid-row: 1;
+    /* First row */
+    grid-column: 2;
+    /* Second column */
+}
+
+.event-details {
+    grid-row: 2;
+    /* Second row */
+    grid-column: 1;
+    /* First column */
+}
+
+.details-link {
+    grid-row: 2;
+    /* Second row */
+    grid-column: 2;
+    /* Second column */
+}
+
+.motivational-text {
+    grid-column: 1 / span 2;
+    /* Spans both columns */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.event-name,
+.event-type,
+.event-date {
+    margin: 0;
+    /* Remove default margin */
+}
+
+.event-state {
+    background-color: #0d9d58;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.details-link a {
+    color: black;
+    text-decoration: underline;
+}
