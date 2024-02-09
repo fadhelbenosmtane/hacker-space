@@ -7,6 +7,7 @@
     /* Same width as the sidebar */
     margin-right: 70px;
     /* Add margin for spacing */
+    position: relative;
 }
 
 .top-bar {
@@ -65,64 +66,18 @@
     text-decoration: underline;
 }
 
-
-.event-box {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.event-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.event-state {
-    background-color: #63c363;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.event-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 20px;
-}
-
-.event-name {
-    font-weight: bold;
-    font-size: 25px;
-}
-
-
-
-.event-date {
-    margin-top: 5px;
-}
-
-.event-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.details-link a {
-    color: black;
-    text-decoration: underline;
-}
-
-.event-top , .event-bottom {
-    padding:0 30px;
-}
-
 .navigation-bar span.selected {
     color: #000;
     text-decoration: underline;
-  }
-  
+}
+
+.no-events-message {
+    position: absolute;
+    top: 170%;
+    right: 30%;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
