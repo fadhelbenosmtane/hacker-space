@@ -1,8 +1,8 @@
 import sequelize from "../connection/database.js";
 import { DataTypes } from "sequelize";
 
-const judges = sequelize.define(
-  "Judges",
+const judge = sequelize.define(
+  "Judge",
   {
     id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
     name: { type: DataTypes.STRING },
@@ -18,4 +18,4 @@ const judges = sequelize.define(
   },
   { createdAt: false, updatedAt: false }
 );
-export default judges;
+export default judge;
