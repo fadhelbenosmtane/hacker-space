@@ -18,6 +18,11 @@ const HomePage = () => {
       state: "Ongoing",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_gdg_hack",
+      submissionFormat: "PDF",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "2 days 10 hours",
     },
     {
       name: "Project Showcase",
@@ -26,6 +31,11 @@ const HomePage = () => {
       state: "Finished",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2"],
+      hackerGuideLink: "http://example.com/hacker_guide_project_showcase",
+      submissionFormat: "Word Document",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "Finished",
     },
     {
       name: "Web Development Bootcamp",
@@ -34,6 +44,11 @@ const HomePage = () => {
       state: "Finished",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3", "Button 4"],
+      hackerGuideLink: "http://example.com/hacker_guide_web_dev_bootcamp",
+      submissionFormat: "HTML",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "Finished",
     },
     {
       name: "Data Science Hackathon",
@@ -42,6 +57,11 @@ const HomePage = () => {
       state: "Ongoing",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_data_science_hackathon",
+      submissionFormat: "Jupyter Notebook",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "4 days 6 hours",
     },
     {
       name: "Startup Bootcamp",
@@ -50,6 +70,11 @@ const HomePage = () => {
       state: "Ongoing",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_startup_bootcamp",
+      submissionFormat: "Presentation",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "1 day 12 hours",
     },
     {
       name: "Innovation Project Competition",
@@ -58,8 +83,27 @@ const HomePage = () => {
       state: "Ongoing",
       motivationalText: "Your motivational text here",
       detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2"],
+      hackerGuideLink: "http://example.com/hacker_guide_innovation_project",
+      submissionFormat: "PowerPoint",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "3 days 8 hours",
+    },
+    {
+      name: "AI Workshop",
+      type: "(Workshop)",
+      date: "Sat, Oct 20th",
+      state: "Upcoming",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1"],
+      hackerGuideLink: "http://example.com/hacker_guide_ai_workshop",
+      submissionFormat: "None",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "10 days",
     },
   ];
+  
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
