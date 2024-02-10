@@ -10,7 +10,7 @@ const Event = sequelize.define(
       type: DataTypes.STRING,
       values: ["hackthon", "ideathon", "workshop", "talk"],
     },
-    description: { type: DataTypes.STRING },
+    description: { type: DataTypes.STRING(1000) },
     location: { type: DataTypes.STRING },
     date: { type: DataTypes.DATE },
     startTime: { type: DataTypes.DATEONLY, defaultValue: DataTypes.NOW },

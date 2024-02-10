@@ -19,4 +19,5 @@ judge.belongsToMany(Event, { through: "judgment" });
 Event.hasMany(challange); //{ foreignKey: "eventid" }
 challange.belongsTo(Event);
 
+console.log(Event.prototype);
 export { Event, challange, judge, momber, submetion, team, participate };

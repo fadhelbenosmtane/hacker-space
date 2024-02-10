@@ -1,5 +1,6 @@
 import express from "express";
 import sequelize from "./connection/database.js";
+import { create_data } from "./Controller/create_data.js";
 import {
   Event,
   challange,
@@ -18,7 +19,7 @@ app.use("/", (req, res) => {
 
 sequelize.sync({ force: true }).then(() => {
   //   craete();
-  //   create_data();
+  create_data();
   console.log("succ");
   app.listen("2500");
 });
