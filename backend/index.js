@@ -3,7 +3,7 @@ import sequelize from "./connection/database.js";
 import {
   Event,
   challange,
-  judges,
+  judge,
   momber,
   submetion,
   team,
