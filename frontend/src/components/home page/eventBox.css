@@ -1,9 +1,7 @@
 .event-box {
     display: grid;
     grid-template-rows: auto auto;
-    /* Two rows */
     grid-template-columns: repeat(2, 1fr);
-    /* Two columns */
     gap: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -13,15 +11,10 @@
 
 .event-info {
     grid-row: 1;
-    /* First row */
     grid-column: 1;
-    /* First column */
     display: flex;
-    /* Display as flex to align items in the same line */
     align-items: center;
-    /* Align items vertically */
     gap: 20px;
-    /* Add gap between items */
     width: 700px;
 }
 
@@ -32,37 +25,23 @@
 
 .event-state {
     grid-row: 1;
-    /* First row */
     grid-column: 2;
-    /* Second column */
 }
 
 .event-details {
     grid-row: 2;
-    /* Second row */
     grid-column: 1;
-    /* First column */
 }
 
 .details-link {
     grid-row: 2;
-    /* Second row */
     grid-column: 2;
-    /* Second column */
 }
 
 .motivational-text {
     grid-column: 1 / span 2;
-    /* Spans both columns */
     display: flex;
     justify-content: flex-start;
-}
-
-.event-name,
-.event-type,
-.event-date {
-    margin: 0;
-    /* Remove default margin */
 }
 
 .event-state {
@@ -75,4 +54,88 @@
 .details-link a {
     color: black;
     text-decoration: underline;
+}
+
+.event-additional-info {
+    margin-top: 20px;
+    /* Spans both columns */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: start;
+    gap: 20px;
+}
+
+.time-left span {
+    font-weight: bold;
+}
+
+.time-left {
+    gap: 10px;
+}
+
+.time {
+    display: flex;
+    grid-row: 3;
+    grid-column: 1;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.time span {
+    font-weight: bold;
+}
+
+.join-button {
+    border: 1px solid #0d9d58;
+    grid-row: 3;
+    grid-column: 2;
+    border-radius: 5px;
+    color: #0d9d58;
+    padding: 8px 0px;
+}
+
+.submission-format span {
+    font-weight: bold;
+}
+
+.prizes {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.prizes div {
+    margin-right: 20px;
+}
+
+.prizes div span {
+    font-weight: bold;
+}
+
+.challenge-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.challenge-buttons button {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 2px 35px;
+    border: 1px solid #FFBA00;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.hacker-guide a {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+.themes-challenges {
+    font-weight: bold;
+    font-size: 20px;
 }
