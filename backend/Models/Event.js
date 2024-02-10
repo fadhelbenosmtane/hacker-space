@@ -13,8 +13,11 @@ const Event = sequelize.define(
     description: { type: DataTypes.STRING },
     location: { type: DataTypes.STRING },
     date: { type: DataTypes.DATE },
-    startTime: { type: DataTypes.TIME },
-    endTime: { type: DataTypes.TIME },
+    startTime: { type: DataTypes.DATEONLY, defaultValue: DataTypes.NOW },
+    endTime: { type: DataTypes.DATEONLY },
+    prize1: { type: DataTypes.INTEGER, defaultValue: 0 },
+    prize2: { type: DataTypes.INTEGER, defaultValue: 0 },
+    prize3: { type: DataTypes.INTEGER, defaultValue: 0 },
   },
   { createdAt: false, updatedAt: false }
 );

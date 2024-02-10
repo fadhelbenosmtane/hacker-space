@@ -1,5 +1,14 @@
 import express from "express";
 import sequelize from "./connection/database.js";
+import {
+  Event,
+  challange,
+  judges,
+  momber,
+  submetion,
+  team,
+  participate,
+} from "./Models/Model.js";
 
 const app = express();
 
