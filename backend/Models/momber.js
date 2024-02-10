@@ -7,7 +7,7 @@ const momber = sequelize.define(
     id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
     name: { type: DataTypes.STRING },
     age: { type: DataTypes.INTEGER },
-    phone: { type: DataTypes.INTEGER },
+    phone: { type: DataTypes.STRING },
   },
   { createdAt: false, updatedAt: false }
 );
