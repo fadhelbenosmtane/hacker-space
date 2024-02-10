@@ -2,97 +2,127 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../common/Sidebar";
 import searchIcon from "../../assets/search-icon.png";
 import "./homePage.css";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-
-const style = {
-  position: 'absolute' ,
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
-
-
-
+import EventBox from "./EventBox";
 
 const HomePage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredEvents, setFilteredEvents] = useState([]);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-    // Sample event data array
-    const events = [
-      {
-        name: "GDG Hack",
-        type: "(Hackathon)",
-        date: "Thu, Feb 2nd - Sat, Feb 4th",
-        state: "Ongoing",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Tech Ideathon",
-        type: "(Ideathon)",
-        date: "Mon, Mar 12th - Wed, Mar 14th",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Project Showcase",
-        type: "(Project)",
-        date: "Fri, Apr 20th - Sun, Apr 22nd",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Web Development Bootcamp",
-        type: "(Bootcamp)",
-        date: "Sat, May 5th - Sun, May 6th",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Data Science Hackathon",
-        type: "(Hackathon)",
-        date: "Fri, Jun 15th - Sun, Jun 17th",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Startup Bootcamp",
-        type: "(Bootcamp)",
-        date: "Sat, Jul 21st - Sun, Jul 22nd",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      },
-      {
-        name: "Innovation Project Competition",
-        type: "(Project)",
-        date: "Thu, Aug 30th - Sat, Sep 1st",
-        state: "Upcoming",
-        motivationalText: "Your motivational text here",
-        detailsLink: "#"
-      }
-    ];
+
+  // Sample event data array
+  const events = [
+    {
+      name: "GDG Hack",
+      type: "(Hackathon)",
+      date: "Thu, Feb 2nd - Sat, Feb 4th",
+      state: "Ongoing",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_gdg_hack",
+      submissionFormat: "PDF",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "2 days 10 hours",
+    },
+    {
+      name: "Project Showcase",
+      type: "(Project)",
+      date: "Fri, Apr 20th - Sun, Apr 22nd",
+      state: "Finished",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2"],
+      hackerGuideLink: "http://example.com/hacker_guide_project_showcase",
+      submissionFormat: "Word Document",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "Finished",
+    },
+    {
+      name: "Web Development Bootcamp",
+      type: "(Bootcamp)",
+      date: "Sat, May 5th - Sun, May 6th",
+      state: "Finished",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3", "Button 4"],
+      hackerGuideLink: "http://example.com/hacker_guide_web_dev_bootcamp",
+      submissionFormat: "HTML",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "Finished",
+    },
+    {
+      name: "Data Science Hackathon",
+      type: "(Hackathon)",
+      date: "Fri, Jun 15th - Sun, Jun 17th",
+      state: "Ongoing",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_data_science_hackathon",
+      submissionFormat: "Jupyter Notebook",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "4 days 6 hours",
+    },
+    {
+      name: "Startup Bootcamp",
+      type: "(Bootcamp)",
+      date: "Sat, Jul 21st - Sun, Jul 22nd",
+      state: "Ongoing",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2", "Button 3"],
+      hackerGuideLink: "http://example.com/hacker_guide_startup_bootcamp",
+      submissionFormat: "Presentation",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "1 day 12 hours",
+    },
+    {
+      name: "Innovation Project Competition",
+      type: "(Project)",
+      date: "Thu, Aug 30th - Sat, Sep 1st",
+      state: "Ongoing",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1", "Button 2"],
+      hackerGuideLink: "http://example.com/hacker_guide_innovation_project",
+      submissionFormat: "PowerPoint",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "3 days 8 hours",
+    },
+    {
+      name: "AI Workshop",
+      type: "(Workshop)",
+      date: "Sat, Oct 20th",
+      state: "Upcoming",
+      motivationalText: "Your motivational text here",
+      detailsLink: "#",
+      challengeButtons: ["Button 1"],
+      hackerGuideLink: "http://example.com/hacker_guide_ai_workshop",
+      submissionFormat: "None",
+      prizes: { first: "Prize 1", second: "Prize 2", third: "Prize 3" },
+      timeLeft: "10 days",
+    },
+  ];
+  
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
   const handleSearch = () => {
-    const filtered = events.filter(event => event.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    let filtered = events;
+
+    // Apply category filter if a category is selected
+    if (selectedCategory !== "All") {
+      filtered = filtered.filter((event) =>
+        event.type.includes(selectedCategory)
+      );
+    }
+
+    // Apply search query filter
+    filtered = filtered.filter((event) =>
+      event.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     setFilteredEvents(filtered);
   };
 
@@ -105,15 +135,19 @@ const HomePage = () => {
     if (category === "All") {
       setFilteredEvents(events);
     } else {
-      const filtered = events.filter(event => event.type.includes(category));
+      const filtered = events.filter((event) => event.type.includes(category));
       setFilteredEvents(filtered);
     }
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSearch();
     }
+  };
+
+  const getEventStateColor = (state) => {
+    return state === "Ongoing" ? "#0D9D58" : "#EA4334";
   };
 
   return (
@@ -136,58 +170,67 @@ const HomePage = () => {
               onChange={handleSearchInputChange}
               onKeyPress={handleKeyPress}
             />
-            <img src={searchIcon} alt="Search" className="search-icon" onClick={handleSearch} />
+            <img
+              src={searchIcon}
+              alt="Search"
+              className="search-icon"
+              onClick={handleSearch}
+            />
           </div>
         </div>
         {searchQuery && (
           <div className="navigation-bar">
-            <span>Search Results</span>
+            <span>Results</span>
           </div>
         )}
         {!searchQuery && (
           <div className="navigation-bar">
-            <span onClick={() => handleCategoryFilter("All")} className={selectedCategory === "All" ? "selected" : ""}>All</span>
-            <span onClick={() => handleCategoryFilter("Hackathon")} className={selectedCategory === "Hackathon" ? "selected" : ""}>Hackathons</span>
-            <span onClick={() => handleCategoryFilter("Ideathon")} className={selectedCategory === "Ideathon" ? "selected" : ""}>Ideathons</span>
-            <span onClick={() => handleCategoryFilter("Project")} className={selectedCategory === "Project" ? "selected" : ""}>Projects</span>
-            <span onClick={() => handleCategoryFilter("Bootcamp")} className={selectedCategory === "Bootcamp" ? "selected" : ""}>Bootcamps</span>
+            <span
+              onClick={() => handleCategoryFilter("All")}
+              className={selectedCategory === "All" ? "selected" : ""}
+            >
+              All
+            </span>
+            <span
+              onClick={() => handleCategoryFilter("Hackathon")}
+              className={selectedCategory === "Hackathon" ? "selected" : ""}
+            >
+              Hackathons
+            </span>
+            <span
+              onClick={() => handleCategoryFilter("Ideathon")}
+              className={selectedCategory === "Ideathon" ? "selected" : ""}
+            >
+              Ideathons
+            </span>
+            <span
+              onClick={() => handleCategoryFilter("Project")}
+              className={selectedCategory === "Project" ? "selected" : ""}
+            >
+              Projects
+            </span>
+            <span
+              onClick={() => handleCategoryFilter("Bootcamp")}
+              className={selectedCategory === "Bootcamp" ? "selected" : ""}
+            >
+              Bootcamps
+            </span>
           </div>
         )}
         {/* Map over the filtered events array to generate event-box components */}
-        {filteredEvents.map((event, index) => (
-          <div key={index} className="event-box">
-            <div className="event-top">
-              <div className="event-info">
-                <div className="event-name">{event.name}</div>
-                <div className="event-type">{event.type}</div>
-                <div className="event-date">{event.date}</div>
-              </div>
-              <div className="event-state">{event.state}</div>
-            </div>
-            <div className="event-bottom">
-              <div className="motivational-text">{event.motivationalText}</div>
-              <div>
-                    <a href="#" onClick={(e) => { e.preventDefault(); handleOpen(); }}>See details</a>
-                    <Modal
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                          Text in a modal
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </Typography>
-                      </Box>
-                    </Modal>
-                  </div>
-            </div>
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event, index) => (
+            <EventBox
+              key={index}
+              event={event}
+              getEventStateColor={getEventStateColor}
+            />
+          ))
+        ) : (
+          <div className="no-events-message">
+            {selectedCategory === "All" ? "There are no events available." : `There are no ${selectedCategory.toLowerCase()}s yet.`}
           </div>
-          
-        ))}
+        )}
       </div>
     </>
   );
